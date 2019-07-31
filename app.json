@@ -1,0 +1,18 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ],
+  "description": "",
+  "env": {
+  },
+  "formation": {
+  },
+  "name": "auto-app",
+  "scripts": {
+    "postdeploy": "npm build"
+  },
+  "stack": "heroku-18"
+}
