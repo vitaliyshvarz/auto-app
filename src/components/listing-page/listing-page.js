@@ -1,31 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 
 import ListingHeader from './listing-header/listing-header';
 import ListingImages from './listing-images/listing-images';
 import listingApi from '../../api/listing/listing';
 
-function ListingPage() {
+class ListingPage extends Component {
+  constructor(props) {
+    super(props);
 
-  const [listing, setData] = useState({
-    title: 'Loading your car...',
-    images: []
-  });
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await listingApi.getDummyListing();
-      setData(result);
+    this.state = {
+      listing: {
+        title: 'Loading your car...',
+        images: []
+      }
     };
+  }
 
-    fetchData();
-  }, []);
+  async componentDidMount() {
+    const listing = await listingApi.getDummyListing();
 
-  return (
-    <div className="container">
-      <ListingHeader listingTitle={listing.title}/>
-      <ListingImages listingImages={listing.images}/>
-    </div>
-  );
+    this.setState({
+      listing
+    });
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <ListingHeader listingTitle={this.state.listing.title}/>
+        <ListingImages listing={this.state.listing}/>
+      </div>
+    );
+  }
 }
 
 export default ListingPage;

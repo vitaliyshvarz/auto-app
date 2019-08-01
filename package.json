@@ -86,15 +86,16 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "<rootDir>/src/**/*.js"
+      "<rootDir>/src/**/*.js",
+      "!src/index.js"
     ],
     "coverageThreshold": {
-     "global": {
-       "branches": 80,
-       "functions": 80,
-       "lines": 80,
-       "statements": -10
-     }
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
     },
     "setupFiles": [
       "react-app-polyfill/jsdom"

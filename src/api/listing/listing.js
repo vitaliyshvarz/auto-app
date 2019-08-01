@@ -8,9 +8,11 @@ const listingApi = {
     try {
       const result = await axios.get(API_DUMMY_LISTING_URL);
 
-      if (result) {
+      if (result && result.data) {
         return result.data;
       }
+
+      throw result.code;
 
     } catch (err) {
       console.error('Failed to load dummy listing', err);

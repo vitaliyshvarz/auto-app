@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import GlobalHeader from './components/global-header/global-header';
 import ListingPage from './components/listing-page/listing-page';
@@ -11,13 +11,15 @@ import './auto-app.css';
 function AutoApp() {
   return (
     <div className="AutoApp">
-      <GlobalHeader />
-      <Switch>
-        <Route path="/listing" component={ListingPage} />
-        <Route path="/about" component={AboutPage} />
-        {/* set listing page to default */}
-        <Route component={ListingPage} />
-      </Switch>
+      <Router>
+        <GlobalHeader />
+        <Switch>
+          <Route path="/listing" component={ListingPage} />
+          <Route path="/about" component={AboutPage} />
+          {/* set listing page to default */}
+          <Route component={ListingPage} />
+        </Switch>
+      </Router>
     </div>
   );
 }

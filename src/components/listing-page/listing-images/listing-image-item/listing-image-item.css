@@ -1,0 +1,11 @@
+.listing-picture > img {
+  width: 100%;
+}
+
+.listing-picture:hover {
+  cursor: pointer;
+}
+
+.listing-picture:hover .listing-image-thumb {
+  opacity: 0.5;
+}

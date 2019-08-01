@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import autoLogo from '../../assets/auto-logo.svg';
@@ -6,11 +6,10 @@ import './global-header.css';
 
 function GlobalHeader() {
 
-  function toggleMenu(e) {
-    const nav = document.querySelector('#topMenu');
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    nav.classList.toggle('show');
-    e.preventDefault();
+  function toggleMenu() {
+    setMenuOpen(!menuOpen);
   }
 
   return (
@@ -22,7 +21,7 @@ function GlobalHeader() {
         <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div className="collapse navbar-collapse" id="topMenu">
+      <div className={`collapse navbar-collapse ${menuOpen ? 'show' : ''}`} id="topMenu">
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
           <li className="nav-item active">
             <Link className="nav-link" to="/listing">Listing</Link>
