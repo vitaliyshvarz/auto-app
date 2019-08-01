@@ -28,7 +28,6 @@
             "max": 1,
             "maxEOF": 1
         }],
-        "no-nested-ternary": "error",
         "no-trailing-spaces": "error",
         "no-unneeded-ternary": "error",
         "no-useless-escape": "off",
