@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import axios from 'axios';
 
 import listingApi from '../../../api/listing/listing';
 import ListingPage from '../listing-page';
@@ -25,6 +26,13 @@ describe('ListingHeader', () => {
   // here we do not mock the request responce to be sure that the
   // dummy API always works and sends us data that we expect
   it('updates the state when listing received', async () => {
+    jest.spyOn(axios, 'get').mockImplementation(() => Promise.resolve({
+      data: {
+        title: 'Super car',
+        images: []
+      }
+    }));
+
     const wrapper = shallow(<ListingPage />);
     const instance = wrapper.instance();
 
