@@ -9,9 +9,17 @@ import {
 import './listing-image-modal.css';
 
 class ListingImageModal extends Component {
-  state = {
-    el: document.createElement('div'),
-    modalRoot: document.getElementById('root')
+  constructor(props) {
+    super(props);
+
+    const modalRoot = document.createElement('div');
+    modalRoot.setAttribute('id', 'listingImageModalroot');
+    document.body.appendChild(modalRoot);
+
+    this.state = {
+      el: document.createElement('div'),
+      modalRoot
+    };
   };
 
   componentDidMount() {
@@ -44,7 +52,7 @@ class ListingImageModal extends Component {
         </div>
       </div>,
       // A DOM element
-      this.el,
+      this.state.el,
     ) : null;
   }
 }
