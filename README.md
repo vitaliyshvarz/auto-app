@@ -22,4 +22,29 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
-### Deployment
+
+## Testing
+
+Your code should be 100% covered with tests:
+
+  "branches": 100%,
+  "functions": 100%,
+  "lines": 100%,
+  "statements": 100%
+
+Otherwise CI pipeline will Fail
+
+
+## Deployment
+
+Heroku pipelines (you need access to view this page, contact vitaliy.shvarz.dev@gmail.com to get access):
+https://dashboard.heroku.com/pipelines/43940631-acd8-44b9-b6bb-98c08f8c9e91
+
+### Sandbox
+
+Sandbox release happens automatically on every merge to development branch,
+url to test on sandbox - https://auto-app-sandbox.herokuapp.com/
+
+### Production
+Production release happens automatically on every merge to master (only development branch should be merged to master)
+url to production - https://auto-app-prod.herokuapp.com/
