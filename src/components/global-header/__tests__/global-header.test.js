@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import GlobalHeader from '../global-header';
 
-describe('GlobalHeader', () => {
+describe('<GlobalHeader />', () => {
   const wrapper = mount(
     <Router>
       <GlobalHeader />
@@ -36,5 +36,6 @@ describe('GlobalHeader', () => {
 
       expect(wrapper.find('.navbar-collapse').hasClass('show')).toBe(true);
     });
+
   });
 });

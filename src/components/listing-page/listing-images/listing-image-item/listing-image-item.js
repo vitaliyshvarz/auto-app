@@ -18,7 +18,7 @@ function ListingImageItem ({ listingImage, carTitle }) {
   }
 
   return (
-    <div className="col-12 col-sm-6 col-lg-4 listing-picture"
+    <div className="col-12 col-sm-6 col-lg-4 listing-image"
       onClick={openListingImage}
     >
       <img
@@ -36,7 +36,15 @@ function ListingImageItem ({ listingImage, carTitle }) {
   );
 }
 
+ListingImageItem.defaultProps = {
+  carTitle: 'Loading...',
+  listingImage: {
+    uri: 'Loading...'
+  }
+};
+
 ListingImageItem.propTypes = {
+  carTitle: PropTypes.string,
   listingImage: PropTypes.shape({
     uri: PropTypes.string
   })

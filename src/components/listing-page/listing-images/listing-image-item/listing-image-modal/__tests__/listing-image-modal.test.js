@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 
 import ListingImageModal from '../listing-image-modal';
 
-describe('ListingImageModal', () => {
+describe('<ListingImageModal />', () => {
   const props = {
     imageUri: 'uri',
     imageTitle: 'title',
@@ -14,7 +14,6 @@ describe('ListingImageModal', () => {
 
   it('renders listing-image-modal item when isOpen is true', () => {
     expect(wrapper).toBeDefined();
-
     expect(wrapper.find('.listing-image-modal').length).toBe(1);
   });
 
@@ -23,13 +22,12 @@ describe('ListingImageModal', () => {
       ...props,
       isOpen: false
     };
-
     const wrapper = mount(<ListingImageModal {...newProps}/>);
 
     expect(wrapper.find('.listing-image-modal').length).toBe(0);
   });
 
-  it('removes modal from root on unmount', () => {
+  it('removes modal on unmount', () => {
     const wrapper = mount(<ListingImageModal {...props}/>);
 
     expect(wrapper.find('.listing-image-modal').length).toBe(1);

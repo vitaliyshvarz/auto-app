@@ -25,10 +25,12 @@ class ListingPage extends Component {
   }
 
   render() {
+    const { listing } = this.state;
+
     return (
       <div className="container">
-        <ListingHeader listingTitle={this.state.listing.title}/>
-        <ListingImages listing={this.state.listing}/>
+        <ListingHeader listingTitle={listing.title}/>
+        <ListingImages listing={listing}/>
       </div>
     );
   }

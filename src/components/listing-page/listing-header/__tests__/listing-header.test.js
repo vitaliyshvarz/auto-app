@@ -3,10 +3,17 @@ import { shallow } from 'enzyme';
 
 import ListingHeader from '../listing-header';
 
-it('renders ListingHeader', () => {
-  const wrapper = shallow(<ListingHeader title='Test Car'/>);
+describe('<ListingHeader/>', () => {
+  const props = {
+    title: 'Audi a6'
+  };
 
-  expect(wrapper).toBeDefined();
+  it('renders ListingHeader', () => {
 
-  expect(wrapper.find('h3').length).toBe(1);
+    const wrapper = shallow(<ListingHeader {...props}/>);
+
+    expect(wrapper).toBeDefined();
+
+    expect(wrapper.find('h3').length).toBe(1);
+  });
 });

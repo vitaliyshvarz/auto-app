@@ -11,8 +11,12 @@ function ListingHeader ({ listingTitle }) {
   );
 }
 
+ListingHeader.defaultProps = {
+  listingTitle: 'Loading car...',
+};
+
 ListingHeader.propTypes = {
-  listingImages: PropTypes.string
+  listingTitle: PropTypes.string
 };
 
 export default ListingHeader;

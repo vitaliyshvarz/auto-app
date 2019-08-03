@@ -40,18 +40,17 @@ class ListingImageModal extends Component {
             {imageTitle}
           </p>
           <button type="button" className="close-modal-btn" onClick={onClick}>
-          &times;
+            &times;
           </button>
         </div>
-        <div>
+        <div className="listing-modal-img-container">
           <img
-            className="listing-image-thumb"
+            className="listing-modal-img"
             src={`${PROD_PROTOCOL_PREFIX}${imageUri}${LISTING_IMAGES_MODAL_SIZE_SUFFIX}`}
             alt="logo"
           />
         </div>
       </div>,
-      // A DOM element
       this.state.el,
     ) : null;
   }
