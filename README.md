@@ -1,5 +1,12 @@
 Auto App
 
+## Starting the project
+
+Install [Node.js](https://nodejs.org/en/)
+Install [Yarn](https://yarnpkg.com/en/docs/install#mac-stable)
+
+Run `yarn install`
+
 ## Available Scripts
 
 ### `npm start`
